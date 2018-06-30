@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import url(normalize.css);
+/* 웹카페 레이아웃 */
 /* 박스공통 */
 *, *::before, *::after{
    box-sizing: border-box;
@@ -7,26 +8,69 @@
 /* 모바일 레이아웃 */
 .header, .navigation, .main, .footer{
    width: 100%;
-
+   margin: 0 auto;
+   background: yellow;
+   width: 100%;
 }
-/* 모바일 헤더 */
+/* 공통 헤더 */
 .header{
   background: lime;
   height: 10vh;
 }
-/* 모바일 메인 */
+/* 내비게이션 */
+nav-container{
+  background-color: #988574;
+}
+/* 공통 내비게이션 */
+.navigation{
+  background: aqua;
+  height: 10vh;
+}
+/* 공통 메인 */
 .header{
   background: orange;
+  height: 10vh;
+}
+/* 메인 콘텐츠 */
+/* 모바일 메인 */
+.main{
+  background: orange;
+  height: 70vh;
+}
+.recommend-book{
+  background-color: yellow;
+}
+.news{
+  background-color: brown;
+}
+.board{
+  background-color: skyblue;
+}
+
+
+/* 공통 푸터 */
+.footer-container{
+  background-color: #988574;
 }
 /* 모바일 푸터 */
-.header{
+.footer{
   background: violet;
+  height: 10vh;
+  }
 
- 
+  @media screen and (max-width: 999px){
+    /* 모바일 해더 */
 
-body{
-    background-color: pink;
-  }  
+    /* 모바일 내비게이션 */
+
+    /* 모바일 메인 */
+    .main{
+      display: flex;
+      flex-direction: column;
+
+    }
+     /* 모바일 푸터 */
+  }
 
 @media screen and (min-width: 1000px) {
   /* 웹카페 데스크탑 레이아웃 */
@@ -41,7 +85,6 @@ body{
   /* 데스크탑 헤더 */
   .header{
     height: 10vh;
-    235
   }
   /* 데스크탑 네비게이션 */
   .nav-container{
@@ -53,7 +96,31 @@ body{
   /* 데스크탑 메인 콘텐츠 */
   .main{
     height: 70vh;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
+  .main > *{
+    flex: auto 0 1;
+  }
+  .recommend-book{
+    flex-basis: 320px
+  }
+  .news{
+    flex-basis: 660px
+  }
+  .board{
+
+  }
+  .favorite-site{
+    flex-basis: 230px
+  }
+  .t{
+    flex-basis: 230px
+  }
+ 
+
+
   /* 데스크탑푸터 */
   .footer-container{
     background-color:  #988574;
